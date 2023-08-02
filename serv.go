@@ -9,11 +9,7 @@ import "encoding/json"
 import "strconv"
 
 
-const test = `
 
-{{.}}
-
-`
 
 type Points struct {
 	X []float64
