@@ -12,8 +12,7 @@ Fractals Visualizer is a simple Golang application that generates and visualizes
 
 ## Screenshots
 
-![Fractal Screenshot 1](screenshots/fractal1.png)
-![Fractal Screenshot 2](screenshots/fractal2.png)
+
 
 
 
