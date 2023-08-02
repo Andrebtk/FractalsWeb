@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	
+	
+
+	<canvas id="myCanvas" ></canvas>
+
+	<div style="margin: 20px; text-align: center;">
+        <form id="myForm" action="/" method="POST">
+            <label for="elementChoice">Fractals :</label>
+            <select id="elementChoice"  name="fractalType" style="margin-right: 10px;">
+                <option value="custom1" name="custom1">Custom 1</option>
+                <option value="custom2" name="custom2">Custom 2</option>
+                <option value="levyCurve" name="levyCurve">Levy Curve</option>
+                <option value="dragonCurve" name="dragonCurve">Dragon Curve</option>
+            </select>
+
+            <input type="text" name="numberOfPoints" placeholder="Number of points" style="margin-right: 10px;">
+
+            <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 5px;">Submit</button>
+        </form>
+    </div>
+	
+	<script>
+
+
+
+	var x = [{{range $index, $value := .X}}{{if $index}}, {{end}}{{$value}}{{end}}];
+	var y = [{{range $index, $value := .Y}}{{if $index}}, {{end}}{{$value}}{{end}}];
+
+
+
+
+
+
+
+	
+	var canvas = document.getElementById("myCanvas");
+
+	canvas.height = window.innerHeight * 0.8;
+	canvas.width = window.innerWidth * 0.9;
+
+	console.log("height : "+ window.innerHeight * 0.8)
+	console.log("width : " + window.innerWidth * 0.9)
+
+
+	canvas.style = "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto; border:2px solid black";
+
+
+	var ctx = canvas.getContext("2d");
+
+	ctx.fillStyle = "#000000"; // Set point color
+
+	for (var i = 0; i < x.length; i++) {
+		ctx.beginPath();
+		ctx.arc(x[i] * 200 + canvas.width/2, y[i] * 200 + canvas.height/2, 0.1, 0, 2 * Math.PI); // Scale points and draw
+		ctx.fill();
+	}
+	
+
+
+	</script>
+</body>
