@@ -5,7 +5,6 @@ import "net/http"
 import "text/template"
 import "io/ioutil"
 import "log"
-import "encoding/json"
 import "strconv"
 
 
@@ -65,20 +64,6 @@ func main(){
 		templates.Execute(w, fract)
 	})
 
-	http.HandleFunc("/getCoord", func(w http.ResponseWriter, req *http.Request){
-		
-		w.Header().Add("Content-type", "application/json")
-		
-
-
-
-		jsn := `{"x": {2.5,4.6,6.7}}`
-		jsnRep, err := json.Marshal(jsn)
-
-		if err!=nil { log.Fatal(err) }
-
-		w.Write(jsnRep)
-	})
 	
 	
 	
