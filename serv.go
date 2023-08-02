@@ -74,10 +74,3 @@ func main(){
 	print("Server on : http://localhost:8080/")
 	http.ListenAndServe(":8080", nil)
 }
-
-
-
-
-func print(input interface{}) {
-	fmt.Println(input)
-}
