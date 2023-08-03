@@ -10,10 +10,15 @@ Fractals Visualizer is a simple Golang application that generates and visualizes
 - Adjustable parameters to customize the appearance of the fractals.
 - Fast and efficient rendering using Golang's capabilities.
 
+## Video
+
+![Screencast 2023-08-04 01 22 43 (online-video-cutter com)](https://github.com/Andrebtk/FractalsWeb/assets/53980377/db5b6b64-6325-4d8e-a9b1-404dabe2834d)
+*The video is in 4x because Github don't support long videos :(*
+
+
 ## Screenshots
 
-
-
+![Screenshot 2023-08-04 01:10:09](https://github.com/Andrebtk/FractalsWeb/assets/53980377/9d1107c7-895a-4347-9103-b029ddf2892e)
 
 
 ## How to Execute
