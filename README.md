@@ -1,4 +1,4 @@
-# Fractals Visualizer in Golang
+# Fractals Visualizer in Golang [BETA]
 
 ## Description
 
