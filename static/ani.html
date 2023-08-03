@@ -30,8 +30,7 @@
             <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 5px;">Submit</button>
         </form>
     </div>
-
-
+	
 	<script>
 
 
@@ -40,35 +39,39 @@
 
 
 
-	var fractType = "{{.RenderType}}"
 
 
+    var fractType = "{{.RenderType}}"
 
 	
-	var canvas = document.getElementById("myCanvas");
+	
+    var canvas = document.getElementById("myCanvas");
 
-	canvas.height = window.innerHeight * 0.8;
-	canvas.width = window.innerWidth * 0.9;
-
-
-
-	canvas.style = "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto; border:2px solid black";
+    canvas.height = window.innerHeight * 0.8;
+    canvas.width = window.innerWidth * 0.9;
 
 
-	var ctx = canvas.getContext("2d");
 
-	ctx.fillStyle = "#000000"; // Set point color
+    canvas.style = "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto; border:2px solid black";
+
+    var ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "#000000"; // Set point color
 
 
-	var distance = 200
+    var distance = 200
 
 	var wid = canvas.width/2
 	var hei = canvas.height/2
 
-	if(fractType == "dragonCurve"){ 
+    var size = 0.8
+
+
+	if(fractType == "dragonCurve"){
 		distance = 700
 		wid -= canvas.width/15
 		hei -= canvas.height/4.3
+		
 	}else if(fractType == "levyCurve"){
 		distance = 500
 		wid -= canvas.width/8.4
@@ -83,14 +86,18 @@
 
 
 
-	
-	for (var i = 0; i < x.length; i++) {
-		ctx.beginPath();
-		ctx.arc(x[i] * distance + wid, y[i] * distance + hei, 0.1, 0, 2 * Math.PI); // Scale points and draw
-		ctx.fill();
-	}
 
-	
+    const drawNextCircle = (i) => {
+        if (i < x.length) {
+            ctx.beginPath();
+            ctx.arc(x[i] * distance + wid, y[i] * distance + hei, size, 0, 2 * Math.PI);
+            ctx.fill();
+            requestAnimationFrame(() => drawNextCircle(i + 1));
+        }
+    };
+
+
+    drawNextCircle(0);
 
 	</script>
 </body>
