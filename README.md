@@ -13,7 +13,7 @@ Fractals Visualizer is a simple Golang application that generates and visualizes
 ## Video
 
 ![Screencast 2023-08-04 01 22 43 (online-video-cutter com)](https://github.com/Andrebtk/FractalsWeb/assets/53980377/db5b6b64-6325-4d8e-a9b1-404dabe2834d)
-*The video is in 4x because Github don't support long videos :(*
+*The video is in 4x because Github don't support long videos*
 
 
 ## Screenshots
