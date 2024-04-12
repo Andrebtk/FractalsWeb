@@ -97,19 +97,7 @@ func main(){
 	})
 
 
-	http.HandleFunc("/ani", func(w http.ResponseWriter, req *http.Request){
-
-		w.Header().Add("Content-Type", "text/html")
-
-		
-		fileContent , _ := ioutil.ReadFile("static/animation.html")
-
-		html := string(fileContent)
-
-		w.Write([]byte(html))
-
-
-	})
+	
 
 	
 	fs := http.FileServer(http.Dir("static/"))
